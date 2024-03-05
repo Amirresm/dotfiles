@@ -85,21 +85,18 @@ lvim.plugins = {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
-		-- delay update diagnostics
 		update_in_insert = true,
 	}
 )
 
 vim.opt.colorcolumn = "80"
--- vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=lightgrey")
 
 local catppuccin = require("catppuccin")
-catppuccin.setup({ -- Note: On windows we replace `/` with `\` by default
-    compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
+catppuccin.setup({
+	compile_path = vim.fn.stdpath "cache" .. "/catppuccin"
 })
 
 lvim.colorscheme = "catppuccin-mocha"
-
 
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
