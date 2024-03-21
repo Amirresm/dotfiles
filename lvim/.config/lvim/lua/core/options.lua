@@ -1,4 +1,6 @@
 lvim.colorscheme = "catppuccin-mocha"
+lvim.transparent_window = true
+
 vim.opt.colorcolumn = "80"
 
 vim.cmd("set tabstop=4")
