@@ -1,8 +1,11 @@
 essential:
 	stow -v -t $$HOME -R tmux lvim
 
-sync_zsh:
+sync_hypr:
 	stow -v -t $$HOME -R zsh
+
+sync_zsh:
+	stow -v -t $$HOME -R hypr
 
 pre_zsh:
 	./zsh_setup/zsh_setup.sh

@@ -1,0 +1,65 @@
+@import "/home/amirreza/.cache/wal/colors-wofi.css";
+
+window {
+    margin: 0px;
+    background-color: @background-alpha;
+    border-radius: 30px;
+    border: 2px solid @color1;
+}
+
+#input {
+    margin: 8px;
+	padding: 8px 24px;
+    border: none;
+    color: @foreground;
+    background-color: @background;
+    border-radius: 30px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: @background;
+    border-radius: 30px;
+}
+
+#outer-box {
+    margin: 32px;
+    border: none;
+    /* background-color: @background-alpha; */
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#entry {
+	padding: 12px 24px;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @color15;
+	font-size: 1.1em;
+} 
+
+#text:selected {
+    margin: 5px;
+    border: none;
+    color: @color0;
+	font-size: 1.5em;
+} 
+
+#entry:selected {
+    background-color: @color14;
+    border-radius: 20px;
+    outline: none;
+}
+
+#entry:selected * {
+    background-color: @color14;
+    border-radius: 20px;
+    outline: none;
+}

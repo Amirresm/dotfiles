@@ -1,0 +1,8 @@
+* {{
+    background:     {background};
+    background-alt: {background};
+    foreground:     {foreground};
+    selected:       {color4};
+    active:         {color3};
+    urgent:         {color8};
+}}

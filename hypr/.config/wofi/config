@@ -1,0 +1,5 @@
+prompt=Search
+term=kitty
+allow_images=true
+image_size=32
+location=center

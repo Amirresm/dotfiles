@@ -1,0 +1,173 @@
+@import '/home/amirreza/.cache/wal/colors-waybar.css';
+/* @import 'colors-waybar.css'; */
+
+* {
+    border: none;
+    border-radius: 0;
+	font-family: Liberation Mono;
+    font-family: JetBrains Nerd Font, MesloLGS Nerd Font, FontAwesome, Vazirmtn RD, Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 600;
+    font-size: 15px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    border-radius: 10px;
+    background: @background;
+}
+
+#workspaces button {
+    transition: background 0.3s;
+    color: @foreground;
+    background: transparent;
+    padding: 4px 16px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+#workspaces button.persistent {
+    color: @foreground;
+    font-size: 12px;
+}
+
+#workspaces button:hover {
+    border-radius: 10px;
+    color: @color0;
+    background: @color2;
+}
+
+#workspaces button.active {
+    color: @color0;
+    background: @color2;
+}
+
+label.module {
+	transition: background 0.3s;
+    padding: 8px 16px 8px 12px;
+    border-radius: 8px;
+    color: @foreground;
+    background: @background;
+}
+
+tooltip {
+	background: @background;
+	/* border: 1px solid rgba(100, 114, 125, 0.5); */
+	border-radius: 8px;
+}
+
+tooltip label {
+	color: @color1;
+}
+
+label.module:hover {
+    background: @color6;
+    color: @color0;
+}
+
+#group-hardware, #group-connection, #group-others, #group-sliders, #group-power {
+	transition: background 0.3s;
+    border-radius: 10px;
+    transition: none;
+    color: @foreground;
+    background: @background;
+}
+
+#privacy {
+	padding: 4px 0px 4px 16px;
+}
+
+#memory, #temperature, #bluetooth, #network, #pulseaudio, #backlight, #idle_inhibitor, #language, #power-profiles-daemon {
+	padding: 4px 12px 4px 8px;
+}
+
+#cpu {
+	padding: 4px 16px 4px 12px;
+}
+
+#network {
+	padding-right: 20px;
+}
+#network.disconnected {
+	background: #eb4d4b;
+}
+
+#idle_inhibitor {
+	font-size: 1.2em;
+	padding-left: 12px;
+	padding-right: 16px;
+	font-weight: 900;
+}
+#idle_inhibitor.activated {
+	background: #26A65B;
+}
+#power-profiles-daemon {
+	font-size: 1.2em;
+	padding-left: 12px;
+	padding-right: 16px;
+	margin-bottom: 2px;
+	font-weight: 900;
+}
+#power-profiles-daemon.power-saver {
+	background: #26A65B;
+}
+#power-profiles-daemon.performance {
+	background: #eb4d4b;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#battery {
+	transition: all 0.3s ease;
+	/* padding: 0px 0px; */
+	min-width: 55px;
+}
+
+#battery.charging {
+	/* padding-top: 10px; */
+	/* padding-bottom: 10px; */
+	/* margin-top: -2px; */
+	/* margin-bottom: -2px; */
+    color: #ffffff;
+    background-color: #26A65B;
+}
+#battery.warning:not(.charging) {
+    background-color: #ffbe61;
+    color: black;
+}
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-power, #custom-quit, #custom-reboot, #custom-lock {
+	font-size: 16px;
+}
+
+#custom-power {
+	padding-right: 20px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}

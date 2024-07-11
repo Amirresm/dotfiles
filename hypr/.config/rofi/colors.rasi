@@ -1,0 +1,34 @@
+@import "pywal-theme"
+
+* {
+    background-color: @background;
+    power-colors: @background;
+    border-color: @background;
+    spacing: 2;
+
+    text-color: @foreground;
+    message-background: @foreground;
+	input-background: @background-alt;
+
+    active-background: @background;
+    active-foreground: @background;
+    normal-background: @background;
+    normal-foreground: @background;
+    urgent-background: @urgent;
+    urgent-foreground: @background;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @background;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: @active;
+    selected-active-foreground: @background;
+    selected-normal-background: @selected;
+    selected-normal-foreground: @background;
+    selected-urgent-background: @urgent;
+    selected-urgent-foreground: @background;
+
+}
