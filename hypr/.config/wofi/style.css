@@ -53,13 +53,14 @@ window {
 } 
 
 #entry:selected {
-    background-color: @color14;
+    /* background-color: @color14; */
+    background-color: @color4;
     border-radius: 20px;
     outline: none;
 }
 
 #entry:selected * {
-    background-color: @color14;
+    background-color: @color4;
     border-radius: 20px;
     outline: none;
 }

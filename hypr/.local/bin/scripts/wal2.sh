@@ -22,3 +22,4 @@ for monitor in $(hyprctl monitors | grep 'Monitor' | awk '{ print $2 }'); do
 done
 
 killall -SIGUSR2 waybar
+swaync-client -rs

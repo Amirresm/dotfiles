@@ -67,7 +67,7 @@ tooltip label {
 }
 
 label.module:hover {
-    background: @color6;
+    background: @color4;
     color: @color0;
 }
 

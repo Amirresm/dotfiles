@@ -2,5 +2,5 @@
 @define-color background {background};
 @define-color background-alpha rgba({background.rgb},0.8);
 @define-color accent {color4};
-@define-color current-line {color5};
+@define-color current-line rgba({color14.rgb}, 0.1);
 @define-color comment {color1};
