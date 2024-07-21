@@ -94,6 +94,9 @@ label.module:hover {
 #network {
 	padding-right: 20px;
 }
+#network.wifi {
+	min-width: 100px;
+}
 #network.disconnected {
 	background: #eb4d4b;
 }

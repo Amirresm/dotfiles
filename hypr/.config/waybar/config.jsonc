@@ -164,7 +164,8 @@
 		}
 	},
 	"clock": {
-		"format": "{:%H:%M %Y/%m/%d} ",
+		// "format": "{:%H:%M %Y/%m/%d} ",
+		"format": "{:%H:%M} ",
 		"format-alt": "{:%A, %B %d, %Y (%R)} ",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"calendar": {
@@ -197,7 +198,7 @@
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-		"on-click": "bluedevil-wizard"
+		"on-click": "overskride > /dev/null"
 	},
 	"cpu": {
 		"interval": 1,
@@ -270,12 +271,14 @@
 	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "",
+		// "format-wifi": "",
+		"interval": 1,
+		"format-wifi": "  {bandwidthTotalBytes}",
 		"format-ethernet": "{ipaddr}/{cidr} ",
-		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format": "IP: {ipaddr} Signal: {signalStrength}%\n{ifname} via {gwaddr} on {frequency}GHz ",
 		"format-linked": "{ifname} (No IP) 󱚵",
 		"format-disconnected": "󰤫",
-		"format-alt": "{essid} ({signalStrength}%) "
+		"format-alt": "  {essid} ({signalStrength}%)",
 		// "format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"pulseaudio": {
