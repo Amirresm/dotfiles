@@ -243,10 +243,10 @@
 			"warning": 25,
 			"critical": 15
 		},
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
+		"format": "{capacity}% {icon}  {power:.3g} W",
+		"format-full": "{capacity}% {icon}  {power:.3g} W",
+		"format-charging": "{capacity}%   {power:.3g} W",
+		"format-plugged": "{capacity}%   {power:.3g} W",
 		"format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
@@ -275,7 +275,7 @@
 		"interval": 1,
 		"format-wifi": "  {bandwidthTotalBytes}",
 		"format-ethernet": "{ipaddr}/{cidr} ",
-		"tooltip-format": "IP: {ipaddr} Signal: {signalStrength}%\n{ifname} via {gwaddr} on {frequency}GHz ",
+		"tooltip-format": "IP: {ipaddr} Signal: {signalStrength}%\n{ifname} via {gwaddr} on {frequency}GHz \nDown: {bandwidthDownBytes}, Up: {bandwidthUpBytes}",
 		"format-linked": "{ifname} (No IP) 󱚵",
 		"format-disconnected": "󰤫",
 		"format-alt": "  {essid} ({signalStrength}%)",
