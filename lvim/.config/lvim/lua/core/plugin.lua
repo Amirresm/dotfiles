@@ -5,22 +5,11 @@ lvim.plugins = {
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" }
 	},
-	-- {
-	-- 	'wfxr/minimap.vim',
-	-- 	build = "cargo install --locked code-minimap",
-	-- 	-- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-	-- 	config = function()
-	-- 		vim.cmd("let g:minimap_width = 10")
-	-- 		vim.cmd("let g:minimap_auto_start = 1")
-	-- 		vim.cmd("let g:minimap_auto_start_win_enter = 1")
-	-- 	end,
-	-- },
 	{
 		"karb94/neoscroll.nvim",
 		event = "WinScrolled",
 		config = function()
 			require('neoscroll').setup({
-				-- All these keys will be mapped to their corresponding default scrolling animation
 				mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>',
 					'<C-y>', '<C-e>', 'zt', 'zz', 'zb' },
 				hide_cursor = true,  -- Hide cursor while scrolling
@@ -34,25 +23,8 @@ lvim.plugins = {
 			})
 		end
 	},
-	-- {
-	--   "folke/persistence.nvim",
-	--   event = "BufReadPre", -- this will only start session saving when an actual file was opened
-	--   -- module = "persistence",
-	--   lazy = true,
-	--   config = function()
-	--     require("persistence").setup {
-	--       dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-	--       options = { "buffers", "curdir", "tabpages", "winsize" },
-	--     }
-	--   end,
-	-- },
 	{
 		"tpope/vim-surround",
-
-		-- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-		-- setup = function()
-		--  vim.o.timeoutlen = 500
-		-- end
 	},
 	{
 		"zbirenbaum/copilot-cmp",
@@ -75,11 +47,6 @@ lvim.plugins = {
 				debug = false,   -- Print debug information
 				opacity = nil,   -- 0-100 opacity level of the floating window where 100 is fully transparent.
 				post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
-				-- You can use "default_mappings = true" setup option
-				-- Or explicitly set keybindings
-				-- vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-				-- vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
-				-- vim.cmd("nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>")
 			}
 		end
 	},
@@ -88,5 +55,5 @@ lvim.plugins = {
 	},
 	{
 		"brenoprata10/nvim-highlight-colors"
-	}
+	},
 }
