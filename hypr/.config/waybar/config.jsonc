@@ -10,6 +10,7 @@
 	"modules-left": [
 		"group/group-others",
 		"group/group-hardware",
+		"custom/update",
 		"hyprland/window",
 	],
 	"modules-center": [
@@ -303,6 +304,13 @@
 			]
 		},
 		"on-click": "pavucontrol"
+	},
+	"custom/update": {
+		"format": "{}",
+		"exec": "~/.local/bin/scripts/update_count.sh",
+		"restart-interval": "3600",
+		"tooltip": true,
+		"tooltip-format": "{} updates available",
 	},
 	"custom/quit": {
 		"format": "",
