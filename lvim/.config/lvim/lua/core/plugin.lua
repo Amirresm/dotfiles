@@ -1,3 +1,4 @@
+-- lvim.lsp.null_ls = nil
 lvim.plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
@@ -56,4 +57,7 @@ lvim.plugins = {
 	{
 		"brenoprata10/nvim-highlight-colors"
 	},
+	{
+		"nvimtools/none-ls.nvim"
+	}
 }

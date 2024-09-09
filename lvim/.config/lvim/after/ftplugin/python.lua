@@ -1,11 +1,11 @@
 local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-	{
-		command = "flake8",
-		filetypes = { "python" },
-		extra_args = { "--max-line-length=120" }
-	}
-}
+-- linters.setup {
+-- 	{
+-- 		command = "flake8",
+-- 		filetypes = { "python" },
+-- 		extra_args = { "--max-line-length=80" }
+-- 	}
+-- }
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
