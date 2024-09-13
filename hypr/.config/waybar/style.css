@@ -4,9 +4,9 @@
 * {
     border: none;
     border-radius: 0;
-	font-family: Liberation Mono;
+    font-family: Liberation Mono;
     font-family: JetBrains Nerd Font, MesloLGS Nerd Font, FontAwesome, Vazirmtn RD, Roboto, Helvetica, Arial, sans-serif;
-	font-weight: 600;
+    font-weight: 600;
     font-size: 15px;
 }
 
@@ -67,7 +67,7 @@ tooltip label {
 }
 
 label.module:hover {
-    background: @color4;
+    background: @color6;
     color: @color0;
 }
 

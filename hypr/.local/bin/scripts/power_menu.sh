@@ -9,13 +9,14 @@ case $selection in
 		hyprlock
 		;;
 	"󰗽 Logout")
-		hyprctl dispatch exit
+		uwsm stop
+		# hyprctl dispatch exit
 		;;
 	" Reboot")
-		systemctl reboot
+		reboot
 		;;
 	"⏻ Shutdown")
-		systemctl poweroff
+		shutdown now
 		;;
 esac
 
