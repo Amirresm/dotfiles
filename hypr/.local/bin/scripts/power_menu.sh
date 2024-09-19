@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
-options=" Lock\n󰗽 Logout\n Reboot\n⏻ Shutdown"
+options="   Lock\n󰗽   Logout\n   Reboot\n⏻   Shutdown"
 
 selection=$(echo -e "$options" | wofi --dmenu -i -p "Power Menu" -M "fuzzy")
 
 case $selection in
-	" Lock")
+	"   Lock")
 		hyprlock
 		;;
-	"󰗽 Logout")
+	"󰗽   Logout")
 		uwsm stop
 		# hyprctl dispatch exit
 		;;
-	" Reboot")
+	"   Reboot")
 		reboot
 		;;
-	"⏻ Shutdown")
+	"⏻   Shutdown")
 		shutdown now
 		;;
 esac
