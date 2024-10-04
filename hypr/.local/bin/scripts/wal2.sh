@@ -22,6 +22,11 @@ if [[ -n $1 ]]; then
 		hyprctl hyprpaper wallpaper "$monitor,$wall_path"
 	done
 
+	hostname=$(uname -n)
+	if [[ $hostname == "Voyager" ]]; then
+		python3 "$HOME/.local/bin/scripts/set_rgb.py"
+	fi
+
 	killall -SIGUSR2 waybar
 	swaync-client -rs
 fi
