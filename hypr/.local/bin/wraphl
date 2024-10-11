@@ -1,0 +1,5 @@
+
+#! /bin/sh
+
+UWSM_USE_SESSION_SLICE=true
+exec uwsm start Hyprland
