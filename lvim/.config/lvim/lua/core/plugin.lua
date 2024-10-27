@@ -62,5 +62,60 @@ lvim.plugins = {
 	},
 	{
 		"sindrets/diffview.nvim"
-	}
+	},
+	{
+		"FabijanZulj/blame.nvim",
+		opts = {
+			blame_options = { '-w' },
+		},
+	},
+	-- {
+	-- 	'danilamihailov/beacon.nvim'
+	-- },
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		opts = {},
+		config = function(_, opts) require 'lsp_signature'.setup(opts) end
+	},
+	{
+		'kevinhwang91/nvim-ufo',
+		dependencies = "kevinhwang91/promise-async"
+	},
+	{
+		'rmagatti/auto-session',
+		lazy = false,
+		---enables autocomplete for opts
+		---@module "auto-session"
+		---@type AutoSession.Config
+		opts = {
+			-- suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+			-- log_level = 'debug',
+		}
+	},
+
+	-- COLORSCHEME
+	{
+		"Abstract-IDE/Abstract-cs"
+	},
+	{
+		"rafamadriz/neon"
+	},
+	{
+		"comfysage/evergarden"
+	},
+	{
+		"nyoom-engineering/oxocarbon.nvim"
+	},
+	{
+      'sainnhe/everforest',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        vim.g.everforest_enable_italic = true
+		vim.g.everforest_background = 'hard'
+      end
+    }
 }
