@@ -13,7 +13,7 @@ if [[ -n $1 ]]; then
 	unlink "$config_path"
 	ln -s "$wall_path" "$config_path"
 
-	wal --backend colorz -i "$wall_path" -n
+	# wal --backend colorz -i "$wall_path" -n
 
 	hyprctl hyprpaper unload all
 	hyprctl hyprpaper preload "$wall_path"
@@ -22,11 +22,11 @@ if [[ -n $1 ]]; then
 		hyprctl hyprpaper wallpaper "$monitor,$wall_path"
 	done
 
-	hostname=$(uname -n)
-	if [[ $hostname == "Voyager" ]]; then
-		python3 "$HOME/.local/bin/scripts/set_rgb.py"
-	fi
+	# hostname=$(uname -n)
+	# if [[ $hostname == "voyager" ]]; then
+	# 	python3 "$HOME/.local/bin/scripts/set_rgb.py"
+	# fi
 
-	killall -SIGUSR2 waybar
-	swaync-client -rs
+	# killall -SIGUSR2 waybar
+	# swaync-client -rs
 fi

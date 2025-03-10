@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo sed -i 's/set\ timeout=05/set\ timeout=00/' /boot/grub/grub.cfg
+sudo grub-reboot 0
+sudo reboot

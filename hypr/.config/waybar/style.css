@@ -1,59 +1,70 @@
 @import '/home/amirreza/.cache/wal/colors-waybar.css';
 /* @import 'colors-waybar.css'; */
 
+@define-color red-1 #f9918c;
+@define-color red-5 #c20000;
+@define-color red-10 #93050c;
+
+@define-color green-1 #90b1b1;
+@define-color green-5 #26A65B;
+@define-color green-10 #2a5c45;
+
+@define-color blue #1768aa;
+@define-color yellow #ffbe61;
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: Liberation Mono;
-    font-family: JetBrains Nerd Font, MesloLGS Nerd Font, FontAwesome, Vazirmtn RD, Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 15px;
+	border: none;
+	border-radius: 0;
+	font-family: Liberation Mono;
+	font-family: JetBrains Nerd Font, MesloLGS Nerd Font, FontAwesome, Vazirmtn RD, Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	font-size: 14px;
 }
 
 window#waybar {
-    background: transparent;
+	background-color: transparent;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+	opacity: 0.2;
 }
 
 #workspaces {
-    border-radius: 10px;
-    background: @background;
+	border-radius: 10px;
+	background: @background;
 }
 
 #workspaces button {
-    transition: background 0.3s;
-    color: @foreground;
-    background: transparent;
-    padding: 4px 16px;
-    font-size: 18px;
-    border-radius: 10px;
+	transition: background 0.3s;
+	color: @foreground;
+	background: transparent;
+	padding: 4px 16px;
+	font-size: 18px;
+	border-radius: 10px;
 }
 
 #workspaces button.persistent {
-    color: @foreground;
-    font-size: 12px;
+	color: @foreground;
+	font-size: 12px;
 }
 
 #workspaces button:hover {
-    border-radius: 10px;
-    color: @color0;
-    background: @color2;
+	border-radius: 10px;
+	color: @color0;
+	background: @color2;
 }
 
 #workspaces button.active {
-    color: @color0;
-    background: @color2;
+	color: @color0;
+	background: @color2;
 }
 
 label.module {
 	transition: background 0.3s;
-    padding: 8px 16px 8px 12px;
-    border-radius: 8px;
-    color: @foreground;
-    background: @background;
+	padding: 6px 16px 6px 12px;
+	border-radius: 8px;
+	color: @foreground;
+	background: @background;
 }
 
 tooltip {
@@ -67,38 +78,53 @@ tooltip label {
 }
 
 label.module:hover {
-    background: @color6;
-    color: @color0;
+	background: @color6;
+	color: @color0;
 }
 
-#group-hardware, #group-connection, #group-others, #group-sliders, #group-power {
+#group-hardware,
+#group-connection,
+#group-others,
+#group-sliders,
+#group-power {
 	transition: background 0.3s;
-    border-radius: 10px;
-    transition: none;
-    color: @foreground;
-    background: @background;
+	border-radius: 10px;
+	transition: none;
+	color: @foreground;
+	background: @background;
 }
 
 #privacy {
 	padding: 4px 0px 4px 16px;
 }
 
-#memory, #temperature, #bluetooth, #network, #pulseaudio, #backlight, #idle_inhibitor, #language, #power-profiles-daemon {
+#memory,
+#temperature,
+#bluetooth,
+#network,
+#pulseaudio,
+#backlight,
+#idle_inhibitor,
+#language,
+#power-profiles-daemon {
 	padding: 4px 12px 4px 8px;
 }
 
 #cpu {
-	padding: 4px 16px 4px 12px;
+	padding: 4px 16px 4px 8px;
 }
 
 #network {
 	padding-right: 20px;
 }
+
 #network.wifi {
 	min-width: 100px;
 }
+
 #network.disconnected {
-	background: #eb4d4b;
+	background: @red-1;
+	color: @red-10;
 }
 
 #idle_inhibitor {
@@ -107,9 +133,12 @@ label.module:hover {
 	padding-right: 16px;
 	font-weight: 900;
 }
+
 #idle_inhibitor.activated {
-	background: #26A65B;
+	background: @green-1;
+	color: @green-10;
 }
+
 #power-profiles-daemon {
 	font-size: 1.2em;
 	padding-left: 12px;
@@ -117,19 +146,27 @@ label.module:hover {
 	margin-bottom: 2px;
 	font-weight: 900;
 }
+
 #power-profiles-daemon.power-saver {
-	background: #26A65B;
+	background: @green-1;
+	color: @green-10;
 }
+
 #power-profiles-daemon.performance {
-	background: #eb4d4b;
+	background: radial-gradient(circle, rgba(255, 153, 145, 1) 0%, rgba(247, 144, 140, 1) 12%, rgba(255, 46, 115, 1) 31%, rgba(247, 144, 140, 1) 55%, rgba(255, 153, 145, 1) 100%);
+	color: @red-10;
+	background-size: 200% 200%;
+	animation: hot 10s linear infinite;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+	background-color: @green-1;
+	color: @green-10;
 }
+
 #temperature.critical {
-    background-color: #eb4d4b;
+	background-color: @red-1;
+	color: @red-10;
 }
 
 #battery {
@@ -143,24 +180,29 @@ label.module:hover {
 	/* padding-bottom: 10px; */
 	/* margin-top: -2px; */
 	/* margin-bottom: -2px; */
-    color: #ffffff;
-    background-color: #26A65B;
-}
-#battery.warning:not(.charging) {
-    background-color: #ffbe61;
-    color: black;
-}
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	color: #ffffff;
+	background-color: @green-5;
 }
 
-#custom-power, #custom-quit, #custom-reboot, #custom-lock {
+#battery.warning:not(.charging) {
+	background-color: @yellow;
+	color: black;
+}
+
+#battery.critical:not(.charging) {
+	background-color: @red-5;
+	color: #ffffff;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-lock {
 	font-size: 16px;
 }
 
@@ -169,8 +211,22 @@ label.module:hover {
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+	to {
+		background-color: #ffffff;
+		color: #000000;
+	}
+}
+
+@keyframes hot {
+	0% {
+		background-position: 0% 0%;
+	}
+
+	50% {
+		background-position: 100% 100%;
+	}
+
+	100% {
+		background-position: 200% 200%;
+	}
 }

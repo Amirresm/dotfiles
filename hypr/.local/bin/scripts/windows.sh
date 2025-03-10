@@ -23,7 +23,7 @@ for app in apps:
 
 output_string = f'{workspaces_string}{scratchpad_string}'.strip()
 
-selection_cmd = f'pkill wofi || echo "{output_string}" | wofi --dmenu --lines=8 --height=30% -b -M "fuzzy"'
+selection_cmd = f'pkill wofi || echo "{output_string}" | wofi --dmenu --lines=8 --width=50% -b -M "fuzzy"'
 selection = subprocess.check_output(selection_cmd, shell=True, text=True)
 selection = [app for app in apps if app["match"] == selection][0]
 

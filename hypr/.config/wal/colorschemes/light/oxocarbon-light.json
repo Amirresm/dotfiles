@@ -1,0 +1,26 @@
+{
+  "refer": "https://github.com/nyoom-engineering/base16-oxocarbon/",
+  "special": {
+    "background": "#ffffff",
+    "foreground": "#37474f",
+    "cursor": "#37474f"
+  },
+  "colors": {
+    "color0": "#f2f2f2",
+    "color1": "#0f62fe",
+    "color2": "#be95ff",
+    "color3": "#42be65",
+    "color4": "#ee5396",
+    "color5": "#ffab91",
+    "color6": "#ff7eb6",
+    "color7": "#90a4ae",
+    "color8": "#161616",
+    "color9": "#0f62fe",
+    "color10": "#be95ff",
+    "color11": "#42be65",
+    "color12": "#ee5396",
+    "color13": "#ffab91",
+    "color14": "#08bdba",
+    "color15": "#525252"
+  }
+}

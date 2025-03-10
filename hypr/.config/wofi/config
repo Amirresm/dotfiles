@@ -1,5 +1,8 @@
 prompt=Search
+hide_scroll=false
 term=kitty
 allow_images=true
 image_size=32
-location=center
+location=botton
+width=30%
+height=60%
