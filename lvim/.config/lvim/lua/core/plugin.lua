@@ -108,14 +108,21 @@ lvim.plugins = {
 		"nyoom-engineering/oxocarbon.nvim"
 	},
 	{
-      'sainnhe/everforest',
-      lazy = false,
-      priority = 1000,
-      config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
-        vim.g.everforest_enable_italic = true
-		vim.g.everforest_background = 'hard'
-      end
-    }
+		'sainnhe/everforest',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.everforest_enable_italic = true
+			vim.g.everforest_background = 'hard'
+		end
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{ "towolf/vim-helm", ft = "helm" }
 }

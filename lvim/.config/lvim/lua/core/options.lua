@@ -2,7 +2,7 @@ lvim.colorscheme = "catppuccin-mocha"
 -- lvim.colorscheme = "oxocarbon"
 -- lvim.colorscheme = "evergarden"
 --
--- lvim.transparent_window = true
+lvim.transparent_window = true
 vim.opt.colorcolumn = "80"
 
 vim.cmd("set tabstop=4")
@@ -13,6 +13,8 @@ vim.cmd("set smartindent")
 vim.cmd("set smarttab")
 
 vim.cmd("set conceallevel=0")
+
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -71,14 +73,13 @@ vim.opt.foldenable = false
 -- M.nvim_create_augroups(autoCommands)
 
 vim.api.nvim_create_user_command('Difforig', function()
-      local scratch_buffer = vim.api.nvim_create_buf(false, true)
-      local current_ft = vim.bo.filetype
-      vim.cmd('vertical sbuffer' .. scratch_buffer)
-      vim.bo[scratch_buffer].filetype = current_ft
-      vim.cmd('read ++edit #') -- load contents of previous buffer into scratch_buffer
-      vim.cmd.normal('1G"_d_') -- delete extra newline at top of scratch_buffer without overriding register
-      vim.cmd.diffthis() -- scratch_buffer
-      vim.cmd.wincmd('p')
-      vim.cmd.diffthis() -- current buffer
+	local scratch_buffer = vim.api.nvim_create_buf(false, true)
+	local current_ft = vim.bo.filetype
+	vim.cmd('vertical sbuffer' .. scratch_buffer)
+	vim.bo[scratch_buffer].filetype = current_ft
+	vim.cmd('read ++edit #')   -- load contents of previous buffer into scratch_buffer
+	vim.cmd.normal('1G"_d_')   -- delete extra newline at top of scratch_buffer without overriding register
+	vim.cmd.diffthis()         -- scratch_buffer
+	vim.cmd.wincmd('p')
+	vim.cmd.diffthis()         -- current buffer
 end, {})
-
