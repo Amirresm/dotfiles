@@ -42,15 +42,16 @@ wk.add({
 	},
 	{
 		{ "<leader>s", group = "Search" },
+		{ "<leader>ss", "<cmd>Telescope resume<cr>", desc = "Continue Last Search" },
 		{ "<leader>sg", "<cmd>Telescope git_files<cr>", desc = "Find Git" },
 		{ "<leader>st", "<cmd>Telescope live_grep<cr>", desc = "Find String" },
-		{ "<leader>ss", "<cmd>Telescope grep_string<cr>", desc = "Find Under cursor", mode = { "n", "v" } },
+		{ "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "Find Under cursor", mode = { "n", "v" } },
 		{ "<leader>sb", "<cmd>Telescope buffers<cr>", desc = "Find Buffer" },
 		{ "<leader>sp", "<cmd>Telescope commands<cr>", desc = "Find Command" },
 		{ "<leader>s?", "<cmd>Telescope help_tags<cr>", desc = "Find Help" },
 		{ "<leader>s$", "<cmd>Telescope marks<cr>", desc = "Marks" },
 		{ "<leader>s%", "<cmd>Telescope registers<cr>", desc = "Registers" },
-		{ "<leader>s#", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
+		{ "<leader>;", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
 	},
 	{
 		{ "<leader>b", group = "Buffer" },

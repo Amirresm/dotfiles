@@ -24,7 +24,7 @@ return {
 						jump_next = "]]",
 						accept = "<CR>",
 						refresh = "gr",
-						open = "<M-CR>"
+						open = "<M-\\>"
 					},
 					layout = {
 						position = "bottom", -- | top | left | right | horizontal | vertical
@@ -37,7 +37,7 @@ return {
 					hide_during_completion = true,
 					debounce = 75,
 					keymap = {
-						accept = "<M-Enter>",
+						accept = "<M-CR>",
 						accept_word = "<M-l>",
 						accept_line = "<M-j>",
 						next = "<M-]>",

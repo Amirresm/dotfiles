@@ -46,5 +46,10 @@ return {
 			"<cmd>Trouble qflist toggle focus=true<cr>",
 			desc = "Quickfix List (Trouble)",
 		},
+		{
+			"<leader>lA",
+			"<cmd>Telescope quickfix<cr>",
+			desc = "Quickfix List (Trouble)",
+		},
 	},
 }
