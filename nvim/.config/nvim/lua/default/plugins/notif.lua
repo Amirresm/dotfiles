@@ -17,5 +17,24 @@ return {
 				relative = "editor", -- What the notification window position is relative to
 			},
 		},
-	}
+	},
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			require("notify").setup({
+				-- stages = "",
+				timeout = 3000,
+                max_width = 50,
+                render = "wrapped-compact",
+				icons = {
+					ERROR = "",
+					WARN = "",
+					INFO = "",
+					DEBUG = "",
+					TRACE = "✎",
+				},
+			})
+			vim.notify = require("notify")
+		end,
+	},
 }

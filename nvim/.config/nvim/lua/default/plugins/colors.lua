@@ -45,6 +45,7 @@ return {
 				treesitter = true,
 				barbar = true,
 				fidget = true,
+				notify = true,
 			},
 		},
 	},

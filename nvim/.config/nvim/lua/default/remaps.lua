@@ -17,7 +17,8 @@ wk.add({
 		{ "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer" },
 		{ "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle Undo Tree" },
 
-        -- { "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle Terminal" },
+		-- Set in lua/default/plugins/toggleterm.lua
+		-- { "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle Terminal" },
 
 		{ "<C-l>", "<C-w>l", desc = "Right Window" },
 		{ "<C-h>", "<C-w>h", desc = "Left Window" },
@@ -35,7 +36,7 @@ wk.add({
 		{ "<M-j>", moveline.block_down, mode = "v", desc = "Move Line Up" },
 
 		{ "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Find File" },
-		{ "<leader>n", "<cmd>Telescope fidget<cr>", desc = "Notifications" },
+		{ "<leader>n", "<cmd>Telescope notify<cr>", desc = "Notifications" },
 
 		{ "<leader>/", "gcc", desc = "Toggle Comment", remap = true },
 		{ "<leader>/", "gc", desc = "Toggle Comment", mode = { "v" }, remap = true },
@@ -105,7 +106,7 @@ wk.add({
 			mode = { "n", "v" },
 		},
 		{ "<leader>lr", vim.lsp.buf.rename, desc = "Rename Symbol" },
-		{ "<C-k>", vim.lsp.buf.signature_help, desc = "Signature Help" },
+		{ "<C-K>", vim.lsp.buf.signature_help, desc = "Signature Help" },
 		{ "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
 		{ "gd", vim.lsp.buf.definition, desc = "Go to Definition" },
 		{ "gD", vim.lsp.buf.declaration, desc = "Go to Declaration" },
@@ -138,5 +139,10 @@ wk.add({
 		{ "<leader>p", group = "Session" },
 		{ "<leader>ps", "<cmd>SessionSave<cr>", desc = "Save Session" },
 		{ "<leader>pl", "<cmd>SessionSearch<cr>", desc = "Load Session" },
+	},
+	{
+		{ "<leader>d", group = "Debugger" },
+		{ "<leader>du", '<cmd>lua require"dapui".toggle()<CR>', desc = "Debug: Toggle UI" },
+		-- Set in lua/default/plugins/dap.lua
 	},
 })
