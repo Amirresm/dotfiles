@@ -215,7 +215,7 @@
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-		"on-click": "~/.local/bin/scripts/select_bt.sh"
+		//"on-click": "~/.local/bin/scripts/select_bt.sh"
 	},
 	"keyboard-state": {
 		"numlock": true,
@@ -306,9 +306,10 @@
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		// "format-wifi": "",
+        "max-length": 26,
 		"interval": 1,
 		"format-wifi": "  {bandwidthTotalBytes}",
-		"format-ethernet": "{ipaddr}/{cidr} ",
+		"format-ethernet": " {ipaddr}/{cidr}",
 		"tooltip-format": "IP: {ipaddr} Signal: {signalStrength}%\n{ifname} via {gwaddr} on {frequency}GHz \nDown: {bandwidthDownBytes}, Up: {bandwidthUpBytes}",
 		"format-linked": "{ifname} (No IP) 󱚵",
 		"format-disconnected": "󰤫",
