@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 ~/projects/project-mirror/main.py
+python3 ~/projects/personal/project-mirror/main.py
