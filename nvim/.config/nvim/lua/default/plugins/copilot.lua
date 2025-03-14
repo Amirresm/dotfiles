@@ -11,6 +11,9 @@ return {
 	-- 	end,
 	-- }
 	{
+		"AndreM222/copilot-lualine",
+	},
+	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		event = "InsertEnter",
@@ -24,11 +27,11 @@ return {
 						jump_next = "]]",
 						accept = "<CR>",
 						refresh = "gr",
-						open = "<M-\\>"
+						open = "<M-\\>",
 					},
 					layout = {
 						position = "bottom", -- | top | left | right | horizontal | vertical
-						ratio = 0.4
+						ratio = 0.4,
 					},
 				},
 				suggestion = {
@@ -56,9 +59,9 @@ return {
 					cvs = false,
 					["."] = false,
 				},
-				copilot_node_command = 'node', -- Node.js version must be > 18.x
+				copilot_node_command = "node", -- Node.js version must be > 18.x
 				server_opts_overrides = {},
 			})
 		end,
-	}
+	},
 }

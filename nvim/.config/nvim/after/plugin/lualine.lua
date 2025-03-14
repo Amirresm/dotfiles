@@ -47,9 +47,10 @@ require("lualine").setup({
 			-- end,
 		},
 		lualine_x = {
+            "copilot",
 			{
 				get_active_lsp,
-				icon = "📡",
+				-- icon = "📡",
 			},
 			"encoding",
 			"fileformat",

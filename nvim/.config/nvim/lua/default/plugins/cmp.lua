@@ -4,15 +4,18 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
+			{
+				"hrsh7th/cmp-path",
+			},
 			"hrsh7th/cmp-cmdline",
 			"onsails/lspkind.nvim",
 			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
 			local cmp = require("cmp")
-			local cmp_select = { behavior = cmp.SelectBehavior.Select }
+			local cmp_select = { behavior = cmp.SelectBehavior.Insert }
 			cmp.setup({
+				preselect = cmp.PreselectMode.None,
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
@@ -24,13 +27,14 @@ return {
 					["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 					["<TAB>"] = cmp.mapping.select_next_item(cmp_select),
 					["<C-y>"] = cmp.mapping.confirm({ select = true }),
-					["<Enter>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<C-Space>"] = cmp.mapping.complete(),
 				}),
 				sources = cmp.config.sources({
-					{ name = "copilot", group_index = 2 },
+					-- { name = "copilot", group_index = 2 },
+					{ name = "path" },
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" }, -- For luasnip users.
+					{ name = "luasnip" },
 				}, {
 					{ name = "buffer" },
 				}),
