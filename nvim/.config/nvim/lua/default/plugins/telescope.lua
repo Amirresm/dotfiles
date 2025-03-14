@@ -23,7 +23,7 @@ return {
 					"--glob=!**/yarn.lock",
 					"--glob=!**/package-lock.json",
 				},
-				file_ignore_patterns = { "node_modules", "vendor", ".*\\.lock", "package-lock.json" },
+				file_ignore_patterns = { ".env/.*", "node_modules", "vendor", ".*\\.lock", "package-lock.json" },
 				mappings = {
 					i = {
 						["<C-u>"] = false,
