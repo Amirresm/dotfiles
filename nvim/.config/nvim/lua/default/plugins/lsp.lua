@@ -19,8 +19,7 @@ return {
 				debounce_hours = 5, -- at least 5 hours between attempts to install/update
 				integrations = {
 					["mason-lspconfig"] = true,
-					-- ['mason-null-ls'] = true,
-					-- ['mason-nvim-dap'] = true,
+					["mason-nvim-dap"] = true,
 				},
 			})
 
@@ -33,16 +32,74 @@ return {
 			)
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = {
-					-- "lua_ls",
-					-- "rust_analyzer",
-					-- "gopls",
-				},
+				ensure_installed = {},
 				automatic_installation = true,
 				handlers = {
 					function(server_name) -- default handler (optional)
 						require("lspconfig")[server_name].setup({
 							capabilities = capabilities,
+						})
+					end,
+					["ts_ls"] = function()
+						require("lspconfig").ts_ls.setup({
+							capabilities = capabilities,
+							settings = {
+								javascript = {
+									inlayHints = {
+										includeInlayEnumMemberValueHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayVariableTypeHints = false,
+									},
+								},
+
+								typescript = {
+									inlayHints = {
+										includeInlayEnumMemberValueHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayVariableTypeHints = false,
+									},
+								},
+							},
+						})
+					end,
+					["basedpyright"] = function()
+						require("lspconfig").basedpyright.setup({
+							capabilities = capabilities,
+							settings = {
+								basedpyright = {
+									analysis = {
+										-- diagnosticSeverityOverrides = {},
+										-- autoSearchPaths = true,
+										useLibraryCodeForTypes = true,
+										diagnosticMode = "workspace", -- "openFilesOnly" | "workspace" | "disabled"
+										typeCheckingMode = "basic", -- "basic" | "standard" | "strict"
+									},
+								},
+							},
+						})
+					end,
+					["pyright"] = function()
+						require("lspconfig").pyright.setup({
+							capabilities = capabilities,
+							settings = {
+								pyright = {
+									analysis = {
+										-- diagnosticSeverityOverrides = {},
+										-- autoSearchPaths = true,
+										useLibraryCodeForTypes = true,
+										diagnosticMode = "workspace", -- "openFilesOnly" | "workspace" | "disabled"
+										typeCheckingMode = "basic", -- "basic" | "standard" | "strict"
+									},
+								},
+							},
 						})
 					end,
 					["lua_ls"] = function()
@@ -89,17 +146,42 @@ return {
 				},
 			})
 
+			if vim.lsp.inlay_hint then
+				vim.lsp.inlay_hint.enable(true, { 0 })
+			end
+
+			local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+			local function prefix_format(diagnostic)
+				if diagnostic.severity == vim.diagnostic.severity.ERROR then
+					return signs["Error"]
+				elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+					return signs["Warning"]
+				elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+					return signs["Hint"]
+				else
+					return signs["Info"]
+				end
+			end
 			vim.diagnostic.config({
-				update_in_insert = true,
+				update_in_insert = false,
+				virtual_text = {
+					source = "if_many",
+					prefix = prefix_format,
+				},
 				float = {
-					focusable = false,
+					focusable = true,
 					style = "minimal",
 					border = "rounded",
 					source = "always",
+					prefix = prefix_format,
 					header = "",
-					prefix = "",
 				},
+				severity_sort = true,
 			})
+			for type, icon in pairs(signs) do
+				local hl = "DiagnosticSign" .. type
+				vim.fn.sign_define(hl, { text = "", texthl = hl, linehl = "", numhl = hl })
+			end
 		end,
 	},
 }

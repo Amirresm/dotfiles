@@ -49,13 +49,13 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.opt.clipboard = "unnamedplus"
 
 -- Enable diagnostic in insert mode
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	underline = true,
-	virtual_text = {
-		spacing = 5,
-	},
-	update_in_insert = true,
-})
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+-- 	underline = true,
+-- 	virtual_text = {
+-- 		spacing = 5,
+-- 	},
+-- 	update_in_insert = true,
+-- })
 
 -- Setup windows clipboard
 if vim.fn.has("wsl") == 1 then

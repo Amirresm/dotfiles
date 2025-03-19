@@ -19,7 +19,7 @@ return {
 		{
 			"<leader>lD",
 			"<cmd>Trouble diagnostics toggle focus=true<cr>",
-			desc = "Diagnostics (Trouble)",
+			desc = "Project Diagnostics (Trouble)",
 		},
 		{
 			"<leader>ld",
@@ -42,13 +42,8 @@ return {
 			desc = "Location List (Trouble)",
 		},
 		{
-			"<leader>la",
+			"<leader>lq",
 			"<cmd>Trouble qflist toggle focus=true<cr>",
-			desc = "Quickfix List (Trouble)",
-		},
-		{
-			"<leader>lA",
-			"<cmd>Telescope quickfix<cr>",
 			desc = "Quickfix List (Trouble)",
 		},
 	},

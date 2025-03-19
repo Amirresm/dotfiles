@@ -20,6 +20,9 @@ wk.add({
 		-- Set in lua/default/plugins/toggleterm.lua
 		-- { "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle Terminal" },
 
+		{ "<C-p>", '"0p', desc = "Paste from clipboard" },
+		{ "<C-S-p>", '"+p', desc = "Paste from clipboard" },
+
 		{ "<C-l>", "<C-w>l", desc = "Right Window" },
 		{ "<C-h>", "<C-w>h", desc = "Left Window" },
 		{ "<C-k>", "<C-w>k", desc = "Top Window" },
@@ -56,6 +59,7 @@ wk.add({
 	},
 	{
 		{ "<leader>b", group = "Buffer" },
+		{ "<leader>bl", "<Cmd>buffer #<CR>", opts },
 		-- Move to previous/next
 		{ "<leader>bb", "<Cmd>BufferPrevious<CR>", opts },
 		{ "<leader>bn", "<Cmd>BufferNext<CR>", opts },
@@ -97,6 +101,15 @@ wk.add({
 	},
 	{
 		{ "<leader>l", group = "LSP" },
+		{ "<leader>lr", vim.lsp.buf.rename, desc = "Rename Symbol" },
+		{ "<leader>lR", "<Cmd>LspRestart<CR>", desc = "Reload Lsp" },
+		{
+			"<leader>li",
+			"<Cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })<CR>",
+			desc = "Toggle Inlay Hints",
+		},
+		{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
+		-- { "<leader>la", vim.lsp.buf.format, desc = "Format buffer", mode = { "n", "v" } },
 		{
 			"<leader>lf",
 			function()
@@ -105,15 +118,16 @@ wk.add({
 			desc = "Format buffer",
 			mode = { "n", "v" },
 		},
-		{ "<leader>lr", vim.lsp.buf.rename, desc = "Rename Symbol" },
-		{ "<C-K>", vim.lsp.buf.signature_help, desc = "Signature Help" },
+        { "<leader>lt", function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end, desc = "Toggle Diagnostics" },
+		{ "<leader>lm", vim.diagnostic.open_float, desc = "Show Line Diagnostics" },
+		{ "<leader>lk", vim.diagnostic.goto_prev, desc = "Previous Diagnostic" },
+		{ "<leader>lj", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
+		{ "<C-S-k>", vim.lsp.buf.signature_help, desc = "Signature Help" },
 		{ "K", vim.lsp.buf.hover, desc = "Hover Documentation" },
 		{ "gd", vim.lsp.buf.definition, desc = "Go to Definition" },
 		{ "gD", vim.lsp.buf.declaration, desc = "Go to Declaration" },
 		{ "gr", vim.lsp.buf.references, desc = "Show References" },
 		{ "gi", vim.lsp.buf.implementation, desc = "Go to Implementation" },
-		{ "[d", vim.diagnostic.goto_prev, desc = "Previous Diagnostic" },
-		{ "]d", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
 		-- Diagnostic is defined in lua/default/plugins/trouble.lua
 		-- {
 		-- 	"<leader>/",
@@ -144,5 +158,13 @@ wk.add({
 		{ "<leader>d", group = "Debugger" },
 		{ "<leader>du", '<cmd>lua require"dapui".toggle()<CR>', desc = "Debug: Toggle UI" },
 		-- Set in lua/default/plugins/dap.lua
+	},
+	-- some cool stuff copied from internet
+	{
+		{ "<leader>t", group = "Utils" },
+		{ "<leader>ts", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "substitute word under cursor", mode = "n" },
+        { "<leader>ts", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], desc = "substitute word under cursor", mode = "v" },
+        { "<leader>tx", "<cmd>!chmod +x %<CR>", desc = "Make file executable" },
+		{ "<leader>tx", "<cmd>!chmod +x %<CR>", { silent = true }, desc = "Make file executable" },
 	},
 })

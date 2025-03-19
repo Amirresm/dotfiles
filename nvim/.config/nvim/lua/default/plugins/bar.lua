@@ -1,23 +1,59 @@
 return {
 	"romgrk/barbar.nvim",
 	dependencies = {
-		"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
-		"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+		"lewis6991/gitsigns.nvim",
+		"nvim-tree/nvim-web-devicons",
 	},
 	opts = {
-		-- auto_hide = 1,
 		focus_on_close = "previous",
-		-- highlight_alternate = false,
-		-- highlight_inactive_file_icons = false,
-		-- highlight_visible = true,
 		insert_at_end = true,
 		semantic_letters = false,
 		sidebar_filetypes = {
-			NvimTree = true,
+			NvimTree = {
+				text = "File Tree",
+				align = "center",
+			},
 			undotree = {
 				text = "undotree",
-				align = "center", -- *optionally* specify an alignment (either 'left', 'center', or 'right')
+				align = "center",
 			},
+		},
+		highlight_alternate = true,
+		highlight_inactive_file_icons = false,
+		highlight_alternate_file_icons = true,
+		highlight_visible = true,
+
+		icons = {
+			buffer_index = false,
+			buffer_number = false,
+			button = "",
+			diagnostics = {
+				[vim.diagnostic.severity.ERROR] = { enabled = true },
+				[vim.diagnostic.severity.WARN] = { enabled = true },
+				[vim.diagnostic.severity.INFO] = { enabled = true },
+				[vim.diagnostic.severity.HINT] = { enabled = true },
+			},
+			gitsigns = {
+				added = { enabled = true, icon = "+" },
+				changed = { enabled = true, icon = "~" },
+				deleted = { enabled = true, icon = "-" },
+			},
+			filetype = {
+				enabled = true,
+			},
+
+			separator = { left = "▎", right = "" },
+			separator_at_end = true,
+
+			modified = { button = "●" },
+			pinned = { button = "", filename = true },
+
+			preset = "default",
+
+			alternate = { filetype = { enabled = true } },
+			current = { buffer_index = true },
+			inactive = { button = "×" },
+			visible = { modified = { buffer_number = false } },
 		},
 	},
 }
