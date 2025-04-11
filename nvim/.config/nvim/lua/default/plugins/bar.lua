@@ -33,11 +33,11 @@ return {
 				[vim.diagnostic.severity.INFO] = { enabled = true },
 				[vim.diagnostic.severity.HINT] = { enabled = true },
 			},
-			gitsigns = {
-				added = { enabled = true, icon = "+" },
-				changed = { enabled = true, icon = "~" },
-				deleted = { enabled = true, icon = "-" },
-			},
+			-- gitsigns = {
+			-- 	added = { enabled = true, icon = "+" },
+			-- 	changed = { enabled = true, icon = "~" },
+			-- 	deleted = { enabled = true, icon = "-" },
+			-- },
 			filetype = {
 				enabled = true,
 			},

@@ -79,7 +79,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,6 +114,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sudo='sudo '
 alias lv="nvim"
+alias jup="jupyter lab --no-browser --port=8888 --ip 0.0.0.0"
 
 export EDITOR=nvim
 export VISUAL=nvim

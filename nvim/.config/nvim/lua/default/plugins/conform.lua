@@ -1,6 +1,7 @@
 local lua = { "stylua" }
 local python = { "black" }
-local prettier = { "prettierd", "prettier", stop_after_first = true }
+-- local prettier = { "prettierd", "prettier", stop_after_first = true }
+local prettier = { "prettier", stop_after_first = true }
 
 return {
 	{
@@ -12,6 +13,7 @@ return {
 		---@type conform.setupOpts
 		opts = {
 			formatters_by_ft = {
+				sh = { "shfmt" },
 				lua = lua,
 				python = python,
 				javascript = prettier,
@@ -33,7 +35,7 @@ return {
 			-- Customize formatters
 			formatters = {
 				shfmt = {
-					prepend_args = { "-i", "2" },
+					-- prepend_args = { "-i", "2" },
 				},
 				black = {
 					prepend_args = { "--fast", "--preview", "--line-length", "80" },
